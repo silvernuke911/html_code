@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>:> Password Gate</title>
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function checkPassword(event) {
+      if (event.key === "Enter") {
+        const correctPassword = "299792458"; // Change to your desired password
+        const input = document.getElementById("password").value;
+
+        if (input === correctPassword) {
+          window.location.href = "special.html";
+        } else {
+          window.location.href = "index.html";
+        }
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById("password").focus();
+      document.getElementById("password").addEventListener("keydown", checkPassword);
+    });
+  </script>
+</head>
+<body>
+  <div class="red-bar top-bar"></div>
+  <div class="container">
+    <h1>Please enter password to access</h1>
+    <input type="password" id="password" class="btn" placeholder="Enter password" style="margin: 10px 0;">
+    <div class="center-btn">
+      <a href="index.html" class="btn back">← Back</a>
+    </div>
+  </div>
+  <div class="red-bar bottom-bar"></div>
+  <script>
+      document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+          window.location.href = "index.html"; // go back to previous page
+        }
+      });
+  </script>
+</body>
+</html>

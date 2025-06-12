@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vercil's Hub</title>
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="red-bar top-bar"></div>
+  <div class="main-content">
+    <h1 id="greeting" class="greeting-text">Hello Vercil,</h1>
+    <br>
+    <div class="button-grid">
+      <a href="google.html" class="btn">Google</a>
+      <a href="entertainment.html" class="btn">Entertainment</a>
+      <a href="communications.html" class="btn">Communications</a>
+      <a href="academics.html" class="btn">Academics</a>
+      <a href="special_buffer.html" class="btn">:></a>
+      <a href="employment.html" class="btn">Employment</a>
+    </div>
+  </div>
+  <div class="red-bar bottom-bar"></div>
+
+  <script>
+    const hour = new Date().getHours();
+    let timeOfDay = "Morning";
+
+    if (hour >= 12 && hour < 18) {
+      timeOfDay = "Afternoon";
+    } else if (hour >= 18) {
+      timeOfDay = "Evening";
+    }
+
+    document.getElementById("greeting").innerHTML = `Hello Vercil, Good ${timeOfDay}.<br>Where would you like to go?`;
+  </script>
+</body>
+</html>
