@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vercil's Hub</title>
   <link rel="icon" type="image/png" href="img/icon.png">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
   <div class="red-bar top-bar"></div>
@@ -26,11 +26,7 @@
   <div class="red-bar bottom-bar"></div>
 
   <script>
-    document.addEventListener('keydown', function(event) {
-      if (event.key === "Escape" || event.key === "Backspace") {
-        window.location.href = "pages/planets.html";
-      }
-    });
+    const exitRedirectURL = "pages/planets.html";
     const hour = new Date().getHours();
     let timeOfDay = "Morning";
     if (hour >= 12 && hour < 19) {
@@ -76,5 +72,6 @@
 
     resetIdleTimer(); // start timer when page loads
   </script>
+  <script src = "js/exitKeys.js"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <title>Academics</title>
   <link rel="icon" type="image/png" href="../img/icon.png">
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../styles/style.css" />
   <script>
   function checkConnection(event, link) {
     if (!navigator.onLine) {
@@ -47,11 +47,7 @@
   </div>
   <div class="red-bar bottom-bar"></div>
   <script>
-    document.addEventListener('keydown', function(event) {
-      if (event.key === "Escape" || event.key === "Backspace") {
-        window.location.href = "../index.html";
-      }
-    });
+    const exitRedirectURL = "../index.html";
     let idleTimer;
     function resetIdleTimer() {
       clearTimeout(idleTimer);
@@ -64,5 +60,6 @@
     });
     resetIdleTimer(); // start timer when page loads
   </script>
+  <script src = "../js/exitKeys.js"></script>
 </body>
 </html>
