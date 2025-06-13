@@ -30,7 +30,7 @@
   <div class="container">
     <h1>:></h1>
     <div class="button-grid">
-        <a href="https://docs.google.com/spreadsheets/d/1oFgDbkkx_niKxFkgkA4O31kxxeraFnKQHFMy5MRIfkg/edit?gid=0#gid=0" target="_blank" class="btn">Availabiliy Chart</a>
+        <a href="https://docs.google.com/spreadsheets/d/1oFgDbkkx_niKxFkgkA4O31kxxeraFnKQHFMy5MRIfkg/edit?gid=0#gid=0" target="_blank" class="btn">Availability Chart</a>
         <a href="https://docs.google.com/document/d/1iGNdztrK2NgjsriIZbsaCNZBn1WHaVl51WSNz4vY_gA/edit?tab=t.0" target="_blank" class="btn">::::::</a>
         <a href="https://docs.google.com/document/d/1SixCrnnkIqqc1gdAHdPXhh5VHflEvWMSLCBD60QDurI/edit?tab=t.0" target="_blank" class="btn">:></a>
         <a href="https://docs.google.com/document/d/1RrNPzJ0U-V3s8EbyLza_BQJAdeAGcBtWN0jjQYc33RA/edit?tab=t.0" target="_blank" class="btn">:::::></a>
@@ -46,11 +46,22 @@
   </div>
   <div class="red-bar bottom-bar"></div>
   <script>
-      document.addEventListener('keydown', function(event) {
-        if (event.key === "Escape") {
-          window.location.href = "index.html"; // go back to previous page
-        }
-      });
+    document.addEventListener('keydown', function(event) {
+      if (event.key === "Escape" || event.key === "Backspace") {
+        window.location.href = "../index.html";
+      }
+    });
+    let idleTimer;
+    function resetIdleTimer() {
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(() => {
+        window.location.href = "../index.html"; // redirect after 60s of no input
+      }, 60000); // 60000 ms = 60 seconds
+    }
+    ['mousemove', 'keydown', 'mousedown', 'scroll', 'touchstart'].forEach(event => {
+      window.addEventListener(event, resetIdleTimer);
+    });
+    resetIdleTimer(); // start timer when page loads
   </script>
 </body>
 </html>

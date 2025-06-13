@@ -10,11 +10,18 @@
 <body>
   <div class="red-bar top-bar"></div>
   <div class="main-content">
-    <h1>Sorry, you are not connected to the internet</h1>
+    <h1>Sorry, you are not connected to the internet :&lt;</h1>
     <div class="center-btn">
         <a href="../index.html" class="btn back">← Back</a>
     </div>
   </div>
   <div class="red-bar bottom-bar"></div>
+  <script>
+    document.addEventListener('keydown', function(event) {
+      if (event.key === "Escape" || event.key === "Backspace") {
+        window.location.href = "../index.html";
+      }
+    });
+  </script>
 </body>
 </html>

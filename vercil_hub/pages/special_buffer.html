@@ -35,11 +35,29 @@
   <div class="red-bar top-bar"></div>
   <div class="container">
     <h1>Please enter password to access</h1>
-    <input type="password" id="password" class="btn" placeholder="Enter password" style="margin: 10px 0;">
+    <input type="password" id="password" class="btn" placeholder="Enter password" style="margin: 10px 0; font-family: 'Consolas', sans-serif;">
     <div class="center-btn">
       <a href="../index.html" class="btn back">← Back</a>
     </div>
   </div>
   <div class="red-bar bottom-bar"></div>
+  <script>
+    document.addEventListener('keydown', function(event) {
+      if (event.key === "Escape" || event.key === "Backspace") {
+        window.location.href = "../index.html";
+      }
+    });
+    let idleTimer;
+    function resetIdleTimer() {
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(() => {
+        window.location.href = "../index.html"; // redirect after 60s of no input
+      }, 60000); // 60000 ms = 60 seconds
+    }
+    ['mousemove', 'keydown', 'mousedown', 'scroll', 'touchstart'].forEach(event => {
+      window.addEventListener(event, resetIdleTimer);
+    });
+    resetIdleTimer(); // start timer when page loads
+  </script>
 </body>
 </html>

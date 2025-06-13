@@ -1,7 +1,7 @@
 body {
-  background-color: #121212;
+  background-color: rgb(17,17,17);
   color: #f0f0f0;
-  font-family: 'Trebuchet MS', sans-serif;
+  font-family: 'Consolas', sans-serif; /*Trebuchet MS*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,11 +10,23 @@ body {
 }
 
 .timestamp-text {
-  font-size: 3rem;   /* Larger than typical <h1> */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* allow wrapping */
   font-weight: bold;
-  text-align: center;
+  font-size: 40px; /* larger than <h1> if needed */
   margin-bottom: 10px;
-  color: #444;
+  gap: 30px;
+  color: #888;
+  text-align: center;
+}
+
+/* On smaller screens, stack vertically */
+@media (max-width: 600px) {
+  .timestamp-text {
+    flex-direction: column;
+  }
 }
 
 .greeting-text {
@@ -59,16 +71,16 @@ h1 {
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  background-color: #444;
+  background-color: #222;
   color: white;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-  min-width: 140px; /* ensures equal minimum width */
+  border: 3px solid #e0e0e0;
+  transition: background-color 0.5s;
+  min-width: 100px; /* ensures equal minimum width */
   flex: 1 1 140px;   /* works with flex container to equalize width */
 }
 
 .btn:hover {
-  background-color: #333;
+  background-color: #111;
 }
 
 .back {
@@ -82,13 +94,17 @@ h1 {
 }
 
 .btn.back {
-  background-color: rgb(100,0,0);  /* optional */
-  color: white;               /* optional */
-  min-width: 100px
+  background-color: rgb(100,0,0); 
+  color: white;             
+  max-width: 75px
+}
+
+.btn.back:hover {
+  background-color: rgb(75,0,0); 
 }
 
 .red-bar {
-  background-color: rgb(54, 0, 0);
+  background-color: rgb(75, 0, 0);
   height: 50px;
   width: 100%;
 }
