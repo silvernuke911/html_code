@@ -55,6 +55,20 @@
     });
     resetIdleTimer(); // start timer when page loads
   </script>
-  <script src = "../js/exitKeys.js"></script>
+  <script>
+    document.addEventListener('keydown', function(event) {
+    const isTypingInPassword = document.activeElement === document.getElementById("password");
+
+    if (isTypingInPassword) return; // Don't exit if user is typing
+
+    if (event.key === "Escape" || event.key === "Backspace") {
+      if (typeof exitRedirectURL !== "undefined") {
+        window.location.href = exitRedirectURL;
+      } else {
+        console.warn("exitRedirectURL is not defined.");
+      }
+    }
+  });
+  </script>
 </body>
 </html>

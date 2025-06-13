@@ -7,8 +7,17 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
+  opacity: 1;                           /* new additon */
+  transition: opacity 0.5s ease-in-out; /* new additon */
 }
 
+
+body.fade-in {
+  opacity: 1;
+}
+body.fade-out {
+  opacity: 0;
+}
 .timestamp-text {
   display: flex;
   justify-content: center;
