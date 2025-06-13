@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- LEARN TO ACCESS THE OTHER GOOGLE ACCOUNT SOON-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Academics</title>
+  <link rel="icon" type="image/png" href="../img/icon.png">
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+  function checkConnection(event, link) {
+    if (!navigator.onLine) {
+      event.preventDefault(); // Stop the link
+      window.location.href = "offline.html"; // Redirect to offline page
+      return false;
+    }
+    return true;
+  }
+    // Automatically bind checkConnection to all .btn links
+  document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".btn");
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function (event) {
+        checkConnection(event, btn);
+      });
+    });
+  });
+  </script>
+</head>
+<body>
+  <div class="red-bar top-bar"></div>
+  <div class="container">
+    <h1>Academics</h1>
+    <div class="button-grid">
+      <a href="https://crs.upd.edu.ph" target="_blank" class="btn" >CRS</a>
+      <a href="https://uvle.upd.edu.ph" target="_blank" class="btn" >UVLe</a>
+      <a href="https://classroom.google.com/u/1/" target="_blank" class="btn" >Classroom</a>
+      <a href="https://drive.google.com/u/1/" target="_blank" class="btn" >Drive</a>
+      <a href="https://mail.google.com/mail/u/1/#inbox" target="_blank" class="btn" >Email</a>
+      <a href="https://overleaf.com" target="_blank" class="btn" >Overleaf</a>
+      <a href="https://github.com/silvernuke911" target="_blank" class="btn" >GitHub</a>
+      <a href="https://chatgpt.com/?model=gpt-4o" target="_blank" class="btn" >ChatGPT</a>
+      <a href="https://chat.deepseek.com/" target="_blank" class="btn" >DeepSeek</a>
+    </div>
+    <div class="center-btn">
+      <a href="../index.html" class="btn back">← Back</a>
+    </div>
+  </div>
+  <div class="red-bar bottom-bar"></div>
+  <script>
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        history.back(); // Go to the previous page
+      }
+    });
+  </script>
+</body>
+</html>

@@ -4,21 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vercil's Hub</title>
-  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="icon" type="image/png" href="img/icon.png">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="red-bar top-bar"></div>
   <div class="main-content">
+    <div id="timestamp" class="timestamp-text"></div>
     <h1 id="greeting" class="greeting-text">Hello Vercil,</h1>
     <br>
     <div class="button-grid">
-      <a href="google.html" class="btn">Google</a>
-      <a href="entertainment.html" class="btn">Entertainment</a>
-      <a href="communications.html" class="btn">Communications</a>
-      <a href="academics.html" class="btn">Academics</a>
-      <a href="special_buffer.html" class="btn">:></a>
-      <a href="employment.html" class="btn">Employment</a>
+      <a href="pages/google.html" class="btn">Google</a>
+      <a href="pages/entertainment.html" class="btn">Entertainment</a>
+      <a href="pages/communications.html" class="btn">Communications</a>
+      <!--<a href="file:///C:/Users/verci/Documents/Python%20Code/html_code/vercil_hub/launch_academics.vbs" class="btn">Academics</a>-->
+      <a href="pages/academics.html" class="btn">Academics</a>
+      <a href="pages/special_buffer.html" class="btn">:></a>
+      <a href="pages/employment.html" class="btn">Employment</a>
     </div>
   </div>
   <div class="red-bar bottom-bar"></div>
@@ -34,6 +36,24 @@
     }
 
     document.getElementById("greeting").innerHTML = `Hello Vercil, Good ${timeOfDay}.<br>Where would you like to go?`;
+
+    function updateClock() {
+      const now = new Date();
+
+      let hours = now.getHours();
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      
+      hours = hours % 12 || 12; // convert 0 to 12 for 12-hour format
+
+      const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
+      const dateString = now.toDateString();
+
+      document.getElementById("timestamp").innerHTML = `${dateString} &nbsp;&nbsp; ${timeString}`;
+    }
+    setInterval(updateClock, 1000); // Update every second
+    updateClock(); // Run once immediately
   </script>
 </body>
 </html>

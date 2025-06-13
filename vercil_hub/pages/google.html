@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Google</title>
+  <link rel="icon" type="image/png" href="../img/icon.png">
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    function checkConnection(event, link) {
+      if (!navigator.onLine) {
+        event.preventDefault(); // Stop the link
+        window.location.href = "offline.html"; // Redirect to offline page
+        return false;
+      }
+      return true;
+    }
+      // Automatically bind checkConnection to all .btn links
+    document.addEventListener("DOMContentLoaded", function () {
+      const buttons = document.querySelectorAll(".btn");
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function (event) {
+          checkConnection(event, btn);
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="red-bar top-bar"></div>
+  <div class="container">
+    <h1>Google</h1>
+    <div class="button-grid">
+      <a href="https://www.google.com" target="_blank" class="btn">Google</a>
+      <a href="https://mail.google.com" target="_blank" class="btn">Email</a>
+      <a href="https://docs.google.com" target="_blank" class="btn">Google Docs</a>
+      <a href="https://sheets.google.com" target="_blank" class="btn">Google Sheets</a>
+      <a href="https://drive.google.com" target="_blank" class="btn">Google Drive</a>
+      <a href="https://calendar.google.com" target="_blank" class="btn">Google Calendar</a>
+    </div>
+    <div class="center-btn">
+      <a href="../index.html" class="btn back">← Back</a>
+    </div>
+  </div>
+  <div class="red-bar bottom-bar"></div>
+  <script>
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        history.back(); // Go to the previous page
+      }
+    });
+  </script>
+</body>
+</html>

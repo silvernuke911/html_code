@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="../img/icon.png">
+  <meta charset="UTF-8" />
+  <title>Communications</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    function checkConnection(event, link) {
+      if (!navigator.onLine) {
+        event.preventDefault(); // Stop the link
+        window.location.href = "offline.html"; // Redirect to offline page
+        return false;
+      }
+      return true;
+    }
+      // Automatically bind checkConnection to all .btn links
+    document.addEventListener("DOMContentLoaded", function () {
+      const buttons = document.querySelectorAll(".btn");
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function (event) {
+          checkConnection(event, btn);
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="red-bar top-bar"></div>
+  <div class="container">
+    <h1>Social Media / Communications</h1>
+    <div class="button-grid">
+      <a href="https://facebook.com" target="_blank" class="btn">Facebook</a>
+      <a href="https://www.facebook.com/messages" target="_blank" class="btn">Messenger</a>
+      <a href="https://twitter.com" target="_blank" class="btn">Twitter</a>
+      <a href="https://discord.com/channels/@me" target="_blank" class="btn">Discord</a>
+      <a href="https://www.instagram.com/" target="_blank" class="btn">Instagram</a>
+    </div>
+    <div class="center-btn">
+      <a href="../index.html" class="btn back">← Back</a>
+    </div>
+  </div>
+  <div class="red-bar bottom-bar"></div>
+  <script>
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        history.back(); // Go to the previous page
+      }
+    });
+  </script>
+</body>
+</html>
