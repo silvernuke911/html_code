@@ -1,0 +1,19 @@
+You will find yourself killed before I ever bow before the mad king.
+
+The writing is on the wall, my friend. My dear friend, you have yourself captured in an almost indisirable state of being, and I find it arguable that you yourself have put you in such a situation. And so, I plead you, please get the fuck off this nonsense and bring yourself to me unharmed.
+
+It seems like I can’t do more advanced data analysis right now. Please try again later.
+
+Once this is working again, I can decode the 3*3 glyphs in your image using your character dictionary and reconstruct the full text. Let me know if you'd like me to provide offline code so you can run the decoding on your end in the meantime.
+
+The error occurred because numbers like 001001111 (with leading zeros) are not allowed in Python integers. Python interprets such numbers as invalid octal literals.
+
+I want to make an encoder which takes the text, transforms it into 3x3 cells according to the dict, and spaces them out horizontally with 1 grid space per symbol. "\n" makes it skip a new line, and prints a new glyph below. Can you get what I'm trying to do?  Could you please complete your sentence? Let me know what you want to do with the combinations (e.g., display, save as images, filter only some cases, etc.).
+
+It is not in my nature to ask these things.
+
+1. You are retarded 
+2. You are gay.
+3. Fuck you you fucking loser
+
+Yeah this system works, I'm afraid. The lion does not concern himself with the opinion of the small dog that barks

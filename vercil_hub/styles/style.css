@@ -92,6 +92,17 @@ h1 {
   background-color: #111;
 }
 
+.btn.keyboard-focus {
+  background-color: #111;
+  /* outline: 2px solid #fff; */
+  /* outline-offset: 2px; */
+}
+
+/* Remove default focus outline */
+.btn:focus {
+  outline: none;
+}
+
 .back {
   background-color: #444;
 }
